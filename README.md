@@ -21,6 +21,25 @@ exemplo, limites, descontos, poderes, categorias, etc.
 
 ---
 
+## 👨‍🔧 Requisitos Técnicos
+
+1. O sistema deve conter pelo menos 4 classes
+2. Utilizar encapsulamento (atributos privados + getters e setters)
+3. Possuir construtores
+4. Utilizar herança para diferenciar tipos de entidades
+5. Demonstrar polimorfismo (por meio de sobrescrita de métodos, tipos de
+retorno ou parâmetros de métodos)
+6. Utilizar ao menos uma classe abstrata ou interface
+7. Usar coleções genéricas (list, set ou map) para armazenar objetos
+8. Ter um menu interativo em console que permita ao usuário testar todas
+as funcionalidades
+9. Entregar também um diagrama UML, representando a estrutura das
+classes
+10. Realizar um vídeo onde o grupo apresenta o trabalho desenvolvido
+em funcionamento
+
+---
+
 ### Descrição dos pacotes:
 
 - **model/** → Contém as classes do domínio (entidades).
@@ -41,3 +60,9 @@ exemplo, limites, descontos, poderes, categorias, etc.
   javac -d bin src/**/*.java
 4. Execute o programa:
   java -cp bin Main
+
+---
+
+## 📊 Diagrama UML
+
+![Diagrama UML](./docs/UML-DogTech.jpeg)
