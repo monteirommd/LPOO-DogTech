@@ -7,7 +7,11 @@ public abstract class Animal {
     private float peso;
     private Cliente dono;
     private int id;
-
+    
+    public Animal(int id){
+        this.id = id;
+    }
+    
     public String getNome() {
         return nome;
     }
