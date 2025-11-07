@@ -4,6 +4,10 @@ public class Veterinario extends Pessoa{
     private String crmv;
     private String especialidade;
 
+    public Veterinario(String nome, String telefone, String cpf){
+        super(nome, telefone, cpf);        
+    }
+    
     public String getCrmv() {
         return crmv;
     }

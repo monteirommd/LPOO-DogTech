@@ -4,6 +4,12 @@ public abstract class  Pessoa {
     private String nome;
     private String cpf;
     private String telefone;
+    
+    public Pessoa(String nome, String telefone, String cpf){
+        this.nome = nome;
+        this.telefone = telefone;
+        this.cpf = cpf;
+    }
 
     public String getCpf() {
         return cpf;
