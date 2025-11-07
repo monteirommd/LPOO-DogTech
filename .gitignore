@@ -22,9 +22,20 @@ bin/
 /dist/
 /nbdist/
 /.nb-gradle/
+/build/
+/nbsupport/
 
 ### VS Code ###
 .vscode/
 
 ### Mac OS ###
 .DS_Store
+Thumbs.db
+
+### Logs ###
+*.log
+
+### Configurações locais do IDE ###
+/.idea/
+/.vscode/
+
