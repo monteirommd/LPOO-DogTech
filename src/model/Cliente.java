@@ -2,7 +2,12 @@ package model;
 
 public class Cliente extends Pessoa{
     private boolean planoSaude;
-
+    
+    public Cliente(String nome, String telefone, String cpf, boolean planoSaude){
+        super(nome, telefone, cpf); //Chama o construtor da classe Pessoa
+        this.planoSaude = planoSaude;
+    }
+    
     public boolean getPlanoSaude() {
         return planoSaude;
     }

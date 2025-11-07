@@ -18,12 +18,16 @@ bin/
 
 ### NetBeans ###
 /nbproject/private/
+/nbproject/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 /build/
 /nbsupport/
+/lib/
+build.xml
+manifest.mf
 
 ### VS Code ###
 .vscode/
