@@ -25,12 +25,17 @@ public class Veterinario extends Pessoa{
     }
 
     @Override
-    public void exibirInfo(){
-        System.out.println("Nome do cliente " + getNome() +
-                "\nCPF: " + getCpf() +
-                "\nTelefone: " + getTelefone() +
-                "\nCRMV: " + getCrmv() +
-                "\nEspecialidade: " + getEspecialidade());
+    public void exibirInfo() {
+        System.out.println(this.toString());
+    }
+    
+    @Override
+    public String toString() {
+    return "Cliente: " + getNome() +
+           "\nCPF: " + getCpf() +
+           "\nTelefone: " + getTelefone() +
+           "\nCRMV: " + getCrmv() +
+           "\nEspecialidade: " + getEspecialidade();
     }
 
 

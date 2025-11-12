@@ -2,6 +2,8 @@ package view;
 
 import helpers.Input;
 
+import model.Cliente;
+
 public class MenuPrincipal {
     public void start(){
         int option;
