@@ -29,7 +29,7 @@ public class Cliente extends Pessoa{
            "\nCPF: " + getCpf() +
            "\nTelefone: " + getTelefone() +
            "\nTem plano? " + (planoSaude ? "Sim" : "Não");
-}
+    }
     
     @Override
     public boolean equals(Object obj) {
