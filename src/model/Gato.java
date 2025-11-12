@@ -10,4 +10,14 @@ public class Gato extends Animal {
     public void emitirSom(){
         System.out.println("Miiaauu");
     }
+    
+    @Override
+    public String toString() {
+    return "Nome: " + getNome() +
+           "\nEspecie: " + getEspecie() +
+           "\nIdade: " + getIdade() +
+           "\nPeso: " + getPeso() +
+           "\nDono: " + getDono() +
+           "\nID: " + getId();
+    }
 }

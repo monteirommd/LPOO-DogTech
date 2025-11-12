@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Cliente extends Pessoa{
     private boolean planoSaude;
     
@@ -17,10 +19,30 @@ public class Cliente extends Pessoa{
     }
 
     @Override
-    public void exibirInfo(){
-        System.out.println("Nome do cliente " + getNome() +
-                "\nCPF: " + getCpf() +
-                "\nTelefone: " + getTelefone() +
-                "\nPlano de saúde: " + (getPlanoSaude() ? "Sim!": "Não"));
+    public void exibirInfo() {
+        System.out.println(this.toString());
+    }
+
+    @Override
+    public String toString() {
+    return "Cliente: " + getNome() +
+           "\nCPF: " + getCpf() +
+           "\nTelefone: " + getTelefone() +
+           "\nTem plano? " + (planoSaude ? "Sim" : "Não");
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+        Cliente other = (Cliente) obj;
+        return Objects.equals(getCpf(), other.getCpf());
+    }
+    
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCpf());
     }
 }

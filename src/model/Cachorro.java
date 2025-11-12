@@ -10,4 +10,14 @@ public class Cachorro extends Animal {
     public void emitirSom(){
         System.out.println("AuAuAu");
     }
+    
+    @Override
+    public String toString() {
+    return "Nome: " + getNome() +
+           "\nEspecie: " + getEspecie() +
+           "\nIdade: " + getIdade() +
+           "\nPeso: " + getPeso() +
+           "\nDono: " + getDono() +
+           "\nID: " + getId();
+    }
 }
