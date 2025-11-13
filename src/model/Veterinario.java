@@ -4,8 +4,9 @@ public class Veterinario extends Pessoa{
     private String crmv;
     private String especialidade;
 
-    public Veterinario(String nome, String telefone, String cpf){
-        super(nome, telefone, cpf);        
+    public Veterinario(String nome, String telefone, String cpf, String crmv){
+        super(nome, telefone, cpf);
+        this.crmv = crmv;
     }
     
     public String getCrmv() {
@@ -31,7 +32,7 @@ public class Veterinario extends Pessoa{
     
     @Override
     public String toString() {
-    return "Cliente: " + getNome() +
+    return "Nome: " + getNome() +
            "\nCPF: " + getCpf() +
            "\nTelefone: " + getTelefone() +
            "\nCRMV: " + getCrmv() +

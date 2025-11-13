@@ -60,7 +60,17 @@ public abstract class Animal {
         this.id = id;
     }
     
-    public void emitirSom(){
+    @Override
+    public boolean equals(Object obj){
         
+        if(this == obj) return true;
+        if(obj == null || getClass() != obj.getClass()) return false;
+        Animal outro = (Animal) obj;  
+        return this.id == outro.id; //compara IDs
+    }
+    
+    @Override
+    public int hashCode(){
+        return Integer.hashCode(id);
     }
 }
