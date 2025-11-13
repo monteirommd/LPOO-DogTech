@@ -45,6 +45,24 @@ public class Input {
             }
         }
     }
+    
+    public static boolean readBoolean(String message) {
+    while (true) {
+        System.out.print(message);
+        String input = sc.nextLine().trim().toLowerCase();
+
+        switch (input) {
+            case "true", "t", "sim", "s", "1" -> {
+                return true;
+            }
+            case "false", "f", "nao", "não", "n", "0" -> {
+                return false;
+            }
+            default -> System.out.println("Entrada inválida. Digite 'sim' ou 'não'.");
+        }
+    }
+}
+    
 
     public static void close(){
         sc.close();
