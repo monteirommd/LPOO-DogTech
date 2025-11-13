@@ -3,7 +3,7 @@ package service;
 import helpers.Input;
 import model.Cliente;
 
-public class ServiceCIiente {
+public class ServiceCliente {
     
     public Cliente cadastrar(){
         System.out.println("=== Cadastro de Cliente ===");
