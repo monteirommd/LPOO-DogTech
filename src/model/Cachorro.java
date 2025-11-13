@@ -7,11 +7,6 @@ public class Cachorro extends Animal {
     }
     
     @Override
-    public void emitirSom(){
-        System.out.println("AuAuAu");
-    }
-    
-    @Override
     public String toString() {
     return "Nome: " + getNome() +
            "\nEspecie: " + getEspecie() +

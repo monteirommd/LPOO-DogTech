@@ -7,11 +7,6 @@ public class Gato extends Animal {
     }
     
     @Override
-    public void emitirSom(){
-        System.out.println("Miiaauu");
-    }
-    
-    @Override
     public String toString() {
     return "Nome: " + getNome() +
            "\nEspecie: " + getEspecie() +

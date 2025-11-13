@@ -31,7 +31,7 @@ public class Veterinario extends Pessoa{
     
     @Override
     public String toString() {
-    return "Cliente: " + getNome() +
+    return "Nome: " + getNome() +
            "\nCPF: " + getCpf() +
            "\nTelefone: " + getTelefone() +
            "\nCRMV: " + getCrmv() +
