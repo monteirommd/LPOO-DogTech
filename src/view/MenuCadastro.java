@@ -1,6 +1,8 @@
 package view;
 
 import helpers.Input;
+import service.ServiceCliente;
+import service.ServiceVeterinario;
 
 public class MenuCadastro {
 
@@ -12,16 +14,19 @@ public class MenuCadastro {
 
             switch(option){
                 case 1:
-                    // Método de Cadastrar cliente vindo da Service
+                    new ServiceCliente().cadastrar();
                     break;
                 case 2:
-                    // Método de Cadastrar veterianario vindo da Service
+                    new ServiceVeterinario().cadastrar();
                     break;
                 case 3:
                     // Método de Cadastrar Gato vindo da Service
                     break;
                 case 4:
                     // Método de Cadastrar Cachorro vindo da Service
+                    break;
+                case 5:
+                    // Método de cadastrar uma consulta
                     break;
                 case 0:
                     System.out.println("Voltando menu");
@@ -34,10 +39,12 @@ public class MenuCadastro {
     }
 
     private void menuCadastro(){
-        System.out.println("Digite 1 para cadastrar um Cliente");
-        System.out.println("Digite 2 para cadastrar um Veterinario");
-        System.out.println("Digite 3 para cadastrar um Gato");
-        System.out.println("Digite 4 para cadastrar um Cachorro");
-        System.out.println("Digite 0 para voltar ao menu anterior");
+        System.out.println("=== MENU DE CADASTRO ===");
+        System.out.println("Digite 1: para cadastrar um Cliente");
+        System.out.println("Digite 2: para cadastrar um Veterinario");
+        System.out.println("Digite 3: para cadastrar um Gato");
+        System.out.println("Digite 4: para cadastrar um Cachorro");
+        System.out.println("Digite 5: para cadastrar uma consulta");
+        System.out.println("Digite 0: para voltar ao menu anterior");
     }
 }
