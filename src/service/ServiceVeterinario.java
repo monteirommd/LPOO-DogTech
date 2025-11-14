@@ -3,7 +3,12 @@ package service;
 import helpers.Input;
 import model.Veterinario;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ServiceVeterinario {
+    private final static List<Veterinario> veterinarios = new ArrayList<>();
+
     public Veterinario cadastrar(){
         System.out.println("=== Cadastro de Veterinario ===");
 
@@ -14,11 +19,16 @@ public class ServiceVeterinario {
 
         //cria o objeto Veterinario com os dados coletados
         Veterinario vet = new Veterinario(nome, telefone, cpf, crmv);
+        veterinarios.add(vet);
 
         System.out.println("\nCliente cadastrado com sucesso!");
         System.out.println(vet); //usa o toString() pra mostrar as infos
 
         return vet;
+    }
+
+    public List<Veterinario> listarVeterinarios(){
+        return veterinarios;
     }
         
 }
