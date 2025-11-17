@@ -10,7 +10,7 @@ public class ServiceGato {
 
     private final static List<Gato> gatos = new ArrayList<>();
 
-    public Gato cadastrar() {
+    public void cadastrar() {
         System.out.println("=== Cadastro de Gato ===");
 
         int id = Input.readInt("ID do animal: ");
@@ -20,7 +20,7 @@ public class ServiceGato {
 
         if (existe) {
             System.out.println("Erro: Já existe um gato com esse ID!");
-            return null;
+            return;
         }
 
         String nome = Input.readString("Nome do gato: ");
@@ -38,7 +38,7 @@ public class ServiceGato {
 
         if (dono == null) {
             System.out.println("Erro: Não existe cliente com esse CPF!");
-            return null;
+            return;
         }
 
         Gato gato = new Gato(id);
@@ -52,7 +52,6 @@ public class ServiceGato {
         System.out.println("\nGato cadastrado com sucesso!");
         System.out.println(gato);
 
-        return gato;
     }
 
     public List<Gato> listar() {

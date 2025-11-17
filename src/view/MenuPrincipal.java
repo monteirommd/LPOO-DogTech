@@ -16,6 +16,7 @@ public class MenuPrincipal {
                     new MenuCadastro().open();
                     break;
                 case 2:
+                    new MenuConsultaCadastro().open();
                     break;
                 case 3:
                     break;
