@@ -22,7 +22,7 @@ public class Cachorro extends Animal {
            "\nEspecie: " + getEspecie() +
            "\nIdade: " + getIdade() +
            "\nPeso: " + getPeso() +
-           "\nDono: " + getDono() +
+           "\nDono: " + (getDono() != null ? getDono().getNome() : "Sem dono") +
            "\nID: " + getId() +
            "\nRaça: " + getRaca();
     }

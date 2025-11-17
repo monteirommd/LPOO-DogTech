@@ -3,6 +3,8 @@ package view;
 import helpers.Input;
 import service.ServiceCliente;
 import service.ServiceVeterinario;
+import service.ServiceGato;
+import service.ServiceCachorro;
 
 public class MenuCadastro {
 
@@ -20,10 +22,10 @@ public class MenuCadastro {
                     new ServiceVeterinario().cadastrar();
                     break;
                 case 3:
-                    // Método de Cadastrar Gato vindo da Service
+                    new ServiceGato().cadastrar();                
                     break;
                 case 4:
-                    // Método de Cadastrar Cachorro vindo da Service
+                    new ServiceCachorro().cadastrar();
                     break;
                 case 5:
                     // Método de cadastrar uma consulta
