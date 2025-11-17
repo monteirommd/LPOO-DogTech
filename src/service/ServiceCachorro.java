@@ -7,11 +7,11 @@ import model.Cachorro;
 import model.Cliente;
 
 
-public class ServiceCachorro {
+public class ServiceCachorro implements CrudService<Cachorro> {
 
     private final static List<Cachorro> cachorros = new ArrayList<>();
 
-    public Cachorro cadastrar() {
+    public void cadastrar() {
         System.out.println("=== Cadastro de Cachorro ===");
 
         int id = Input.readInt("ID do animal: ");
@@ -21,7 +21,7 @@ public class ServiceCachorro {
 
         if (existe) {
             System.out.println("Erro: Já existe um cachorro com esse ID!");
-            return null;
+            return;
         }
 
         String nome = Input.readString("Nome do cachorro: ");
@@ -41,7 +41,7 @@ public class ServiceCachorro {
 
         if (dono == null) {
             System.out.println("Erro: Não existe cliente com esse CPF!");
-            return null;
+            return;
         }
 
         Cachorro cachorro = new Cachorro(id);
@@ -56,11 +56,10 @@ public class ServiceCachorro {
         System.out.println("\nCachorro cadastrado com sucesso!");
         System.out.println(cachorro);
 
-        return cachorro;
     }
 
     
-    public List<Cachorro> listar() {
+    public List<Cachorro> listAll() {
         return cachorros;
     }
 }

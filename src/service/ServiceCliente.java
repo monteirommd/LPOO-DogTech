@@ -8,7 +8,7 @@ import model.Cliente;
 public class ServiceCliente {
     private final static List<Cliente> clientes = new ArrayList<>();
     
-    public Cliente cadastrar(){
+    public void cadastrar(){
         System.out.println("=== Cadastro de Cliente ===");
 
         String nome = Input.readString("Digite o nome do cliente: ");
@@ -21,7 +21,7 @@ public class ServiceCliente {
 
         if(existe){
             System.out.println("Erro: Já existe um cliente cadastrado com esse CPF!");
-            return null;
+            return;
         }
 
         //ja adicionei o reader de booleano na helpers
@@ -33,8 +33,6 @@ public class ServiceCliente {
 
         System.out.println("\nCliente cadastrado com sucesso!");
         System.out.println(cliente); //usa o toString() pra mostrar as infos
-
-        return cliente;
     }
 
     //Listar todos os clientes
