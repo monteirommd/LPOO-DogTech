@@ -24,6 +24,7 @@ public class MenuPrincipal {
                 case 5:
                     break;
                 case 6:
+
                     break;
                 case 0:
                     System.out.println("Saindo do sistema");

@@ -6,10 +6,10 @@ import model.Cliente;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ServiceCliente {
+public class ServiceCliente implements CrudService<Cliente> {
     private final static List<Cliente> clientes = new ArrayList<>();
     
-    public Cliente cadastrar(){
+    public void cadastrar(){
         System.out.println("=== Cadastro de Cliente ===");
 
         String nome = Input.readString("Digite o nome do cliente: ");
@@ -25,10 +25,9 @@ public class ServiceCliente {
         System.out.println("\nCliente cadastrado com sucesso!");
         System.out.println(cliente); //usa o toString() pra mostrar as infos
 
-        return cliente;
     }
-
-    public List<Cliente> listarClientes(){
+    @Override
+    public List<Cliente> listAll(){
         return clientes;
     }
 }
