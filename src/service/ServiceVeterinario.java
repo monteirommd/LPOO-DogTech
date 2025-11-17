@@ -21,7 +21,7 @@ public class ServiceVeterinario {
         Veterinario vet = new Veterinario(nome, telefone, cpf, crmv);
         veterinarios.add(vet);
 
-        System.out.println("\nCliente cadastrado com sucesso!");
+        System.out.println("\nVeterinario cadastrado com sucesso!");
         System.out.println(vet); //usa o toString() pra mostrar as infos
 
         return vet;
