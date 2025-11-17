@@ -134,5 +134,7 @@ public class ServiceCliente {
                 .filter(c -> !c.getPlanoSaude())
                 .forEach(Cliente::exibirInfo);
     }
-
+    public static List<Cliente> getListaClientes() {
+        return clientes;
+    }
 }

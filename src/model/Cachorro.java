@@ -2,6 +2,16 @@ package model;
 
 public class Cachorro extends Animal {
     
+    String raca;
+
+    public String getRaca() {
+        return raca;
+    }
+
+    public void setRaca(String raca) {
+        this.raca = raca;
+    }
+   
     public Cachorro(int id){
         super(id);
     }
@@ -12,7 +22,8 @@ public class Cachorro extends Animal {
            "\nEspecie: " + getEspecie() +
            "\nIdade: " + getIdade() +
            "\nPeso: " + getPeso() +
-           "\nDono: " + getDono() +
-           "\nID: " + getId();
+           "\nDono: " + (getDono() != null ? getDono().getNome() : "Sem dono") +
+           "\nID: " + getId() +
+           "\nRaça: " + getRaca();
     }
 }
