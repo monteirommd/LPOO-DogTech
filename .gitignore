@@ -43,3 +43,6 @@ Thumbs.db
 /.idea/
 /.vscode/
 
+### Classes ###
+/out
+*.class
