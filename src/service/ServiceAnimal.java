@@ -15,7 +15,6 @@ public class ServiceAnimal {
 
         int id = Input.readInt("ID do animal: ");
 
-        // Verifica ID duplicado
         boolean existe = animais.stream().anyMatch(a -> a.getId() == id);
         if (existe) {
             System.out.println("Erro: Já existe um animal com esse ID!");
@@ -32,7 +31,6 @@ public class ServiceAnimal {
         animal.setIdade(idade);
         animal.setPeso(peso);
 
-        // Escolher dono
         String cpf = Input.readString("CPF do dono: ");
         Cliente dono = ServiceCliente.getListaClientes()
             .stream()
@@ -59,10 +57,23 @@ public class ServiceAnimal {
         return animais;
     }
 
+    //buscar animal por ID
     public Animal buscarPorId(int id) {
         return animais.stream()
                 .filter(a -> a.getId() == id)
                 .findFirst()
                 .orElse(null);
     }
+    
+
+    //buscar por nome (Gato e Cachorro)
+    public Animal buscarPorNome(String nome) {
+    for (Animal a : animais) {
+        if (a.getNome().equalsIgnoreCase(nome)) {
+            return a;
+        }
+    }
+    return null;
+}
+
 }

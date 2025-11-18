@@ -3,6 +3,7 @@ package service;
 import helpers.Input;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import model.Animal;
 import model.Consulta;
 import model.Veterinario;
@@ -39,15 +40,18 @@ public class ServiceConsulta {
         System.out.println("2 - Cachorro");
         int tipoAnimal = Input.readInt("Digite: ");
 
+        ServiceAnimal serviceAnimal = new ServiceAnimal(); //instancio animal para usar o metodo
+
+
         Animal animal = null;
 
-        if(tipoAnimal == 1){
+        if (tipoAnimal == 1) {
             String nomeGato = Input.readString("Nome do gato: ");
-            animal = serviceGato.buscarPorNome(nomeGato);
+            animal = serviceAnimal.buscarPorNome(nomeGato);
 
         } else if (tipoAnimal == 2) {
             String nomeCachorro = Input.readString("Nome do cachorro: ");
-            animal = serviceCachorro.buscarPorNome(nomeCachorro);
+            animal = serviceAnimal.buscarPorNome(nomeCachorro);
 
         } else {
             System.out.println("Tipo inválido. Cancelando.");
@@ -72,9 +76,7 @@ public class ServiceConsulta {
         System.out.println("Consulta cadastrada com sucesso!");
     }
 
-    // ==============================
-    // LISTAR TODAS
-    // ==============================
+    //Listar todas
     public void listar() {
         System.out.println("=== LISTA DE CONSULTAS ===");
 
@@ -89,9 +91,7 @@ public class ServiceConsulta {
         });
     }
 
-    // ==============================
-    // BUSCAR POR DATA
-    // ==============================
+    //Buscar por data
     public Consulta buscarPorData(String data) {
         Optional<Consulta> consulta = consultas.stream()
                 .filter(c -> c.getData().equalsIgnoreCase(data))
@@ -100,18 +100,14 @@ public class ServiceConsulta {
         return consulta.orElse(null);
     }
 
-    // ==============================
-    // BUSCAR POR VETERINÁRIO
-    // ==============================
+    //Buscar por veterinario
     public List<Consulta> buscarPorVeterinario(String cpfVet) {
         return consultas.stream()
                 .filter(c -> c.getVeterinario().getCpf().equals(cpfVet))
                 .toList();
     }
 
-    // ==============================
-    // REMOVER CONSULTA
-    // ==============================
+    //Remover consulta
     public void remover() {
         String data = Input.readString("Data da consulta: ");
         String hora = Input.readString("Hora da consulta: ");
