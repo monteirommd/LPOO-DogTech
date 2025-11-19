@@ -1,10 +1,9 @@
 package service;
 
 import helpers.Input;
-import model.Veterinario;
-
 import java.util.ArrayList;
 import java.util.List;
+import model.Veterinario;
 
 public class ServiceVeterinario implements CrudService<Veterinario> {
     private final static List<Veterinario> veterinarios = new ArrayList<>();
@@ -25,9 +24,28 @@ public class ServiceVeterinario implements CrudService<Veterinario> {
         System.out.println(vet); //usa o toString() pra mostrar as infos
 
     }
+
     @Override
     public List<Veterinario> listAll(){
         return veterinarios;
+    }
+
+    //Busca veterinario por cpf
+    public Veterinario buscarVetCPF(){
+    String cpfBusca = Input.readString("Digite o CPF do veterinário para busca: ");
+
+    Veterinario veterinario = veterinarios.stream()
+            .filter(v -> v.getCpf().equals(cpfBusca))
+            .findFirst()
+            .orElse(null);
+
+    if(veterinario != null){
+        return veterinario;
+    } 
+    else{
+        //System.out.println("Veterinario não encontrado.");
+        return null;
+    }
     }
         
 }
