@@ -39,7 +39,9 @@ public class ServiceCliente {
     public List<Cliente> listarClientes(){
         return clientes;
     }
-
+    public void exibirClientes(){
+        System.out.println(listarClientes());
+    }
     //Método de remoção por CPF
     public boolean removerPorCpf(){
         String cpf = Input.readString("Digite o CPF para remover: ");

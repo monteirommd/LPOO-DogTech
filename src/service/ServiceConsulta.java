@@ -108,7 +108,7 @@ public class ServiceConsulta {
     }
 
     //Remover consulta
-    public void remover() {
+    public static void remover() {
         String data = Input.readString("Data da consulta: ");
         String hora = Input.readString("Hora da consulta: ");
 

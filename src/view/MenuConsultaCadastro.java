@@ -1,6 +1,10 @@
 package view;
 
 import helpers.Input;
+import service.ServiceCachorro;
+import service.ServiceCliente;
+import service.ServiceGato;
+import service.ServiceVeterinario;
 
 public class MenuConsultaCadastro {
 
@@ -13,12 +17,16 @@ public class MenuConsultaCadastro {
 
             switch (option){
                 case 1:
+                    new ServiceCliente().buscarClienteCPF();
                     break;
                 case 2:
+                    ServiceVeterinario.buscarVetCPF();
                     break;
-                    case 3:
-                        break;
+                case 3:
+                    new ServiceGato().buscarGato();
+                    break;
                 case 4:
+                    new ServiceCachorro().buscarCachorro();
                     break;
                 case 0:
                     break;

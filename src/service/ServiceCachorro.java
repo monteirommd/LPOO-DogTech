@@ -5,9 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Cachorro;
 import model.Cliente;
+import model.Gato;
 
 
-public class ServiceCachorro implements CrudService<Cachorro> {
+public class ServiceCachorro extends ServiceAnimal {
 
     private final static List<Cachorro> cachorros = new ArrayList<>();
 
@@ -57,9 +58,26 @@ public class ServiceCachorro implements CrudService<Cachorro> {
         System.out.println(cachorro);
 
     }
+    public void buscarCachorro(){
+        String nome = Input.readString("Nome do cachorro: ");
+        Cachorro c = null;
+        for (Cachorro dog : cachorros) {
+            if (dog.getNome().equals(nome)) {
+                c = dog;
+                break;
+            }
+        }
+        if (c != null) {
+            System.out.println(c);
+        }else{
+            System.out.println("Cachorro não encontrado");
+            return;
+        }
+
+    }
 
     
-    public List<Cachorro> listAll() {
+    public static List<Cachorro> listAll() {
         return cachorros;
     }
 }

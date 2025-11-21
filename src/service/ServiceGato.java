@@ -6,7 +6,7 @@ import java.util.List;
 import model.Gato;
 import model.Cliente;
 
-public class ServiceGato {
+public class ServiceGato extends ServiceAnimal{
 
     private final static List<Gato> gatos = new ArrayList<>();
 
@@ -53,8 +53,25 @@ public class ServiceGato {
         System.out.println(gato);
 
     }
-
-    public List<Gato> listar() {
+    public static List<Gato>  listAll() {
         return gatos;
+    }
+
+    public void buscarGato(){
+        String nome = Input.readString("Nome do gato: ");
+        Gato g = null;
+        for (Gato gato : gatos) {
+            if (gato.getNome().equals(nome)) {
+                g = gato;
+                break;
+            }
+        }
+        if (g != null) {
+            System.out.println(g);
+        }else{
+            System.out.println("Gato não encontrado");
+            return;
+        }
+
     }
 }
