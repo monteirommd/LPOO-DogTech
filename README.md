@@ -65,4 +65,4 @@ em funcionamento
 
 ## 📊 Diagrama UML
 
-![Diagrama UML](./docs/UML-DogTech.jpeg)
+![Diagrama UML](./docs/UML-DogTech.png)
