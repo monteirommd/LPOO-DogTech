@@ -31,7 +31,7 @@ public class ServiceVeterinario implements CrudService<Veterinario> {
     }
 
     //Busca veterinario por cpf
-    public Veterinario buscarVetCPF(){
+    public static Veterinario buscarVetCPF(){
     String cpfBusca = Input.readString("Digite o CPF do veterinário para busca: ");
 
     Veterinario veterinario = veterinarios.stream()
@@ -46,6 +46,16 @@ public class ServiceVeterinario implements CrudService<Veterinario> {
         //System.out.println("Veterinario não encontrado.");
         return null;
     }
+    }
+    public static void remover(){
+        Veterinario v = null;
+        v = buscarVetCPF();
+        if(v != null){
+            veterinarios.remove(v);
+            System.out.println("Veterinario removido com sucesso!");
+        }else{
+            System.out.println("Veterinario não encontrado");
+        }
     }
         
 }

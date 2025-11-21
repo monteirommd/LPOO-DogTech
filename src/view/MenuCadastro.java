@@ -1,10 +1,7 @@
 package view;
 
 import helpers.Input;
-import service.ServiceCliente;
-import service.ServiceVeterinario;
-import service.ServiceGato;
-import service.ServiceCachorro;
+import service.*;
 
 public class MenuCadastro {
 
@@ -28,7 +25,7 @@ public class MenuCadastro {
                     new ServiceCachorro().cadastrar();
                     break;
                 case 5:
-                    // Método de cadastrar uma consulta
+                    new ServiceConsulta().cadastrar();
                     break;
                 case 0:
                     System.out.println("Voltando menu");

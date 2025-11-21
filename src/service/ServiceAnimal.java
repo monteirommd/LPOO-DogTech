@@ -33,10 +33,10 @@ public class ServiceAnimal {
 
         String cpf = Input.readString("CPF do dono: ");
         Cliente dono = ServiceCliente.getListaClientes()
-            .stream()
-            .filter(c -> c.getCpf().equals(cpf))
-            .findFirst()
-            .orElse(null);
+                .stream()
+                .filter(c -> c.getCpf().equals(cpf))
+                .findFirst()
+                .orElse(null);
 
         if (dono == null) {
             System.out.println("Erro: Cliente não encontrado!");
@@ -58,15 +58,16 @@ public class ServiceAnimal {
     }
 
     //buscar animal por ID
+
     public Animal buscarPorId(int id) {
         return animais.stream()
                 .filter(a -> a.getId() == id)
                 .findFirst()
                 .orElse(null);
     }
-    
 
     //buscar por nome (Gato e Cachorro)
+
     public Animal buscarPorNome(String nome) {
     for (Animal a : animais) {
         if (a.getNome().equalsIgnoreCase(nome)) {
@@ -75,5 +76,45 @@ public class ServiceAnimal {
     }
     return null;
 }
+    public static <T extends Animal >T buscarPorNome(String nome, List<T> animais) {
+        for (T a : animais) {
+            if (a.getNome().equalsIgnoreCase(nome)) {
+                return a;
+            }
+        }
+        return null;
+    }
 
+
+    public <T extends Animal> void remover(List<T> animais){
+        System.out.println("Escolha se deseja remover por:" +
+                "\n1 - ID" +
+                "\n2 - Nome");
+        int opc = Input.readInt("Escolha:");
+        T encontrado = null;
+        switch(opc){
+            case 1:
+                int id =  Input.readInt("ID do animal: ");
+                for (T a : animais){
+                    if(a.getId() == id){
+                        encontrado = a;
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                String nome =   Input.readString("Nome: ");
+                encontrado = buscarPorNome(nome, animais);
+                break;
+            default:
+                System.out.println("OPÇÃO INVALIDA!");
+                break;
+        }
+        if(encontrado != null){
+            animais.remove(encontrado);
+            System.out.println("Animal removido com sucesso!");
+        }else{
+            System.out.println("Animal não encontrado!");
+        }
+    }
 }
