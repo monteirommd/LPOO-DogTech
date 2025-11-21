@@ -76,7 +76,7 @@ public class ServiceAnimal {
     }
     return null;
 }
-    public <T extends Animal >T buscarPorNome(String nome, List<T> animais) {
+    public static <T extends Animal >T buscarPorNome(String nome, List<T> animais) {
         for (T a : animais) {
             if (a.getNome().equalsIgnoreCase(nome)) {
                 return a;

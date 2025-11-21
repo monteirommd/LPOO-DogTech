@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import model.Animal;
 import model.Consulta;
+import model.Gato;
 import model.Veterinario;
 
 public class ServiceConsulta {
@@ -40,18 +41,17 @@ public class ServiceConsulta {
         System.out.println("2 - Cachorro");
         int tipoAnimal = Input.readInt("Digite: ");
 
-        ServiceAnimal serviceAnimal = new ServiceAnimal(); //instancio animal para usar o metodo
 
 
         Animal animal = null;
 
         if (tipoAnimal == 1) {
             String nomeGato = Input.readString("Nome do gato: ");
-            animal = serviceAnimal.buscarPorNome(nomeGato);
+            animal = ServiceGato.buscarPorNome(nomeGato, ServiceGato.listAll());
 
         } else if (tipoAnimal == 2) {
             String nomeCachorro = Input.readString("Nome do cachorro: ");
-            animal = serviceAnimal.buscarPorNome(nomeCachorro);
+            animal = ServiceCachorro.buscarPorNome(nomeCachorro, ServiceCachorro.listAll());
 
         } else {
             System.out.println("Tipo inválido. Cancelando.");

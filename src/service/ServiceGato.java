@@ -26,6 +26,7 @@ public class ServiceGato extends ServiceAnimal{
         String nome = Input.readString("Nome do gato: ");
         int idade = Input.readInt("Idade: ");
         float peso = (float) Input.readDouble("Peso: ");
+        String epc = Input.readString("Especie do animal: ");
 
         // Escolher o dono já cadastrado
         String cpfDono = Input.readString("CPF do dono: ");
@@ -44,6 +45,7 @@ public class ServiceGato extends ServiceAnimal{
         Gato gato = new Gato(id);
         gato.setNome(nome);
         gato.setIdade(idade);
+        gato.setEspecie(epc);
         gato.setPeso(peso);
         gato.setDono(dono);
 

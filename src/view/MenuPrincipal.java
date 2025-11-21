@@ -72,7 +72,7 @@ public class MenuPrincipal {
             case 2:
                 System.out.println("1 - Remover Gato");
                 System.out.println("2 - Remover Cachorro");
-                int a = Input.readInt("Digite a opção");
+                int a = Input.readInt("Digite a opção: ");
                 if(a == 1){
                     new ServiceGato().remover(ServiceGato.listAll());
                 } else if(a == 2){

@@ -38,7 +38,7 @@ public class MenuConsultaCadastro {
 
     public void exibirMenu(){
         System.out.println("=== Menu Consulta ===");
-        System.out.println("1. Cadastrar Cadastro de Cliente");
+        System.out.println("1. Consultar Cadastro de Cliente");
         System.out.println("2. Consultar Cadastro de Veterinario");
         System.out.println("3. Consultar Cadastro de Gato");
         System.out.println("4. Consultar Cadastro de Cachorro");
